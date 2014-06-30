@@ -12,9 +12,9 @@
 		<tags>memcached enyim cache caching</tags>
 	</metadata>
 	<files>
-		<file src="bin\Release\*.dll" target="lib\net35" />
-		<file src="bin\Release\*.pdb" target="lib\net35" />
-		<file src="bin\Release\*.xml" target="lib\net35" />
+		<file src="bin\Release\*.dll" target="lib\net40" />
+		<file src="bin\Release\*.pdb" target="lib\net40" />
+		<file src="bin\Release\*.xml" target="lib\net40" />
 		<file src="bin\Release\*.transform" target="content" />
 	</files>
 </package>
