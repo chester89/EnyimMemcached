@@ -15,7 +15,7 @@ Properties {
 Include "./utils.ps1"
 FormatTaskName (("-"*20) + "[{0}]" + ("-"*20))
 
-Task Default -depends _NeedsPrivateKey, Rebuild, _Zip, _Nuget
+Task Default -depends Rebuild, _Zip, _Nuget
 
 Task Clean -depends _Clean {
 	# removes the files created by the build process
@@ -41,15 +41,6 @@ Task _CheckConfig {
 	Assert (($projects -ne $null) -and ($projects.length -gt 0)) "Project(s) to be packaged must be specified!"
 }
 
-Task _NeedsPrivateKey {
-	Assert ( $private_key_path -or $private_key_name ) "Either the key path or the key container name must be specified!"
-
-	if ($private_key_path) {
-		Assert (test-path $private_key_path) "The key file '$private_key_path' does not exist."
-		$script:private_key_path = resolve-path $private_key_path
-	}
-}
-
 #################### Clean ####################
 
 Task _Clean -depends _CheckConfig {
@@ -65,7 +56,7 @@ Task _Build -depends _CheckConfig {
 
 	Write-Host "Building the solution." -ForegroundColor Green
 
-	Exec { msbuild "$source_root\$solution_name" /t:Build /p:"Configuration=Release;PrivateKeyName=$private_key_name;PrivateKeyPath=$script:private_key_path;IlMergePath=$ilmerge" }
+	Exec { msbuild "$source_root\$solution_name" /t:Build /p:"Configuration=Release;IlMergePath=$ilmerge" }
 }
 
 #################### Nuget ####################

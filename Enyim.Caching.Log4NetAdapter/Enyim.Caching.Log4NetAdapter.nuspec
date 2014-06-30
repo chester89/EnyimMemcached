@@ -15,7 +15,7 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="bin\Release\Enyim.Caching.Log4NetAdapter.*" target="lib\net35" />
+		<file src="bin\Release\Enyim.Caching.Log4NetAdapter.*" target="lib\net40" />
 		<file src="config.transform" target="content\app.config.transform" />
 	</files>
 </package>
