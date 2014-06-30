@@ -10,7 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DemoApp</RootNamespace>
     <AssemblyName>DemoApp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <Import Project="..\build\CommonProperties.targets" />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enyim.Caching\Enyim.Caching.csproj">
-      <Project>{D438C0B3-A168-40B8-BDDD-61F0939DFF35}</Project>
+      <Project>{d438c0b3-a168-40b8-bddd-61f0939dff35}</Project>
       <Name>Enyim.Caching</Name>
     </ProjectReference>
   </ItemGroup>
